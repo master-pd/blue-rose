@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "description": "Groups data storage for Blue Rose Bot",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00",
+    "schema_version": "1.0",
+    "total_groups": 0,
+    "active_groups": 0,
+    "inactive_groups": 0,
+    "premium_groups": 0,
+    "free_trial_groups": 0
+  },
+  "groups": {},
+  "statistics": {
+    "daily_activity": {},
+    "monthly_growth": {},
+    "group_type_distribution": {},
+    "regional_distribution": {}
+  },
+  "indexes": {
+    "by_title": {},
+    "by_member_count": {},
+    "by_activity": {},
+    "by_creation_date": {},
+    "by_plan_expiry": {}
+  },
+  "settings": {
+    "data_retention_days": 730,
+    "prune_inactive_after_days": 180,
+    "max_groups_stored": 50000,
+    "backup_frequency_hours": 12,
+    "activity_threshold_days": 30
+  }
+}
