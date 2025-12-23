@@ -1,0 +1,57 @@
+# Permission Matrix
+
+## Role Hierarchy
+1. **BOT OWNER** (1000) - Full control
+2. **BOT ADMIN** (900) - Global operations
+3. **GROUP OWNER** (800) - Group owner
+4. **GROUP ADMIN** (700) - Group admin
+5. **MODERATOR** (600) - Moderator
+6. **MEMBER** (500) - Regular member
+7. **GUEST** (400) - Restricted
+8. **RESTRICTED** (300) - Limited access
+9. **BANNED** (200) - No access
+10. **EXTERNAL BOT** (100) - Bot detection
+
+## Permission Types
+
+### Bot Level Permissions
+- MANAGE_BOT_ADMINS
+- MANAGE_GLOBAL_SETTINGS
+- VIEW_GLOBAL_ANALYTICS
+- FORCE_JOIN_LEAVE
+- OVERRIDE_FEATURES
+- EMERGENCY_CONTROL
+
+### Group Level Permissions
+- MANAGE_GROUP_SETTINGS
+- MANAGE_GROUP_ADMINS
+- MANAGE_MODERATORS
+- VIEW_GROUP_ANALYTICS
+- MANAGE_PAYMENTS
+- MANAGE_SERVICES
+
+### Moderation Permissions
+- WARN_USERS
+- MUTE_USERS
+- BAN_USERS
+- DELETE_MESSAGES
+- PIN_MESSAGES
+- RESTRICT_USERS
+
+### Feature Permissions
+- USE_AI_RESPONSES
+- USE_SCHEDULED_MESSAGES
+- USE_NIGHT_MODE
+- USE_AUTO_REPLIES
+- USE_MODERATION
+
+### Payment Permissions
+- REQUEST_PAYMENT
+- APPROVE_PAYMENTS
+- VIEW_PAYMENT_HISTORY
+
+### Access Permissions
+- ACCESS_ADMIN_PANEL
+- ACCESS_GROUP_PANEL
+- ACCESS_BOT_PANEL
+- ACCESS_ANALYTICS
