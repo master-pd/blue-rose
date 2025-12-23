@@ -24,5 +24,5 @@
     "allowed_extensions": [".json", ".txt", ".log"],
     "encryption_key": "your-secret-key-here"
   },
-  "last_updated": "2024-01-01T00:00:00"
+  "last_updated": "2025-12-23T00:00:00"
 }
