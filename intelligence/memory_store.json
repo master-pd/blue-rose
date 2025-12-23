@@ -1,0 +1,16 @@
+{
+  "conversations": {},
+  "user_profiles": {},
+  "group_contexts": {},
+  "learned_patterns": {
+    "question_response": {},
+    "greeting_response": {},
+    "common_phrases": {}
+  },
+  "statistics": {
+    "total_conversations": 0,
+    "active_users": 0,
+    "memory_size": 0,
+    "last_updated": "2024-01-01T00:00:00"
+  }
+}
