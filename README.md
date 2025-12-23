@@ -42,15 +42,15 @@ graph TB
     end
 ```
 
-```mermaid
-    
+```
     subgraph "Data Layer"
         H[JSON Storage] --> I[25k+ Files]
         H --> J[Atomic Writes]
         H --> K[Version Control]
     end
 ```
-```mermaid
+
+```
     subgraph "Operations"
         L[Hot Reload] --> M[Live Updates]
         N[Multi-Threaded] --> O[Async Operations]
