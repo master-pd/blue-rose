@@ -11,7 +11,7 @@
 </div>
 
 <p align="center">
-  <img src="assets/images/banner.png" width="500"/>
+  <img src="assets/ban/1.jpg" width="500"/>
 </p>
 
 ---
@@ -84,7 +84,7 @@ graph TB
 
 
 <p align="center">
-  <img src="images/pro.png" width="500"/>
+  <img src="assets/pp/1.jpg" width="500"/>
 </p>
 
 ### 🤖 CORE PLATFORM
