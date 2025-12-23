@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "description": "Group permission settings",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "default_permissions": {
+    "owner": {
+      "can_manage_settings": true,
+      "can_manage_admins": true,
+      "can_manage_payments": true,
+      "can_manage_moderation": true,
+      "can_override": true,
+      "can_emergency_lock": true
+    },
+    "admin": {
+      "can_manage_settings": true,
+      "can_manage_admins": false,
+      "can_manage_payments": true,
+      "can_manage_moderation": true,
+      "can_override": false,
+      "can_emergency_lock": false
+    },
+    "moderator": {
+      "can_manage_settings": false,
+      "can_manage_admins": false,
+      "can_manage_payments": false,
+      "can_manage_moderation": true,
+      "can_override": false,
+      "can_emergency_lock": false
+    },
+    "member": {
+      "can_manage_settings": false,
+      "can_manage_admins": false,
+      "can_manage_payments": false,
+      "can_manage_moderation": false,
+      "can_override": false,
+      "can_emergency_lock": false
+    }
+  },
+  "group_overrides": {}
+}

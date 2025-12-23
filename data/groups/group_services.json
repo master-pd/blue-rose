@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "description": "Group service activation status",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "services": {
+    "auto_reply": {
+      "enabled": true,
+      "description": "Automatic intelligent replies"
+    },
+    "moderation": {
+      "enabled": true,
+      "description": "Auto-moderation features"
+    },
+    "welcome": {
+      "enabled": true,
+      "description": "Welcome new members"
+    },
+    "goodbye": {
+      "enabled": true,
+      "description": "Farewell leaving members"
+    },
+    "prayer_alerts": {
+      "enabled": false,
+      "description": "Islamic prayer time alerts"
+    },
+    "scheduled_messages": {
+      "enabled": false,
+      "description": "Time-based messages"
+    },
+    "night_mode": {
+      "enabled": false,
+      "description": "Quiet hours"
+    },
+    "analytics": {
+      "enabled": true,
+      "description": "Group statistics"
+    }
+  },
+  "group_services": {}
+}

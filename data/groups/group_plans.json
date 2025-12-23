@@ -1,0 +1,12 @@
+{
+  "metadata": {
+    "description": "Group payment plan information",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "plans": {},
+  "active_subscriptions": {},
+  "expired_subscriptions": {},
+  "payment_history": {}
+}
