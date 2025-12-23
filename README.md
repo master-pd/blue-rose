@@ -1,11 +1,13 @@
 # 🌹 BLUE ROSE BOT 🌹
 **Advanced Telegram Bot System with AI Intelligence & Complete Group Management**
 <div align="center">
+  
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![Python](https://img.shields.io/badge/python-3.12%2B-green)
 ![Telegram API](https://img.shields.io/badge/Telegram%20API-v20%2B-blue)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 ![Status](https://img.shields.io/badge/status-production%20ready-brightgreen)
+
 </div>
 ---
 ## 📋 TABLE OF CONTENTS
