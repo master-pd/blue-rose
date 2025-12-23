@@ -1,0 +1,101 @@
+# Blue Rose Bot - Docker Compose
+# Production deployment with PostgreSQL and Redis
+
+version: '3.8'
+
+services:
+  # Main bot service
+  blue-rose-bot:
+    build: .
+    container_name: blue-rose-bot
+    restart: unless-stopped
+    ports:
+      - "8443:8443"  # Webhook HTTPS
+      - "8080:8080"  # Health checks
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - BOT_OWNER_ID=${BOT_OWNER_ID}
+      - WEBHOOK_DOMAIN=${WEBHOOK_DOMAIN}
+      - WEBHOOK_SECRET=${WEBHOOK_SECRET}
+      - ADMIN_KEY=${ADMIN_KEY}
+      - TZ=Asia/Dhaka
+    volumes:
+      - bot_data:/app/data
+      - bot_logs:/app/logs
+      - bot_backups:/app/backups
+      - ./ssl:/app/ssl:ro
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - bot-network
+
+  # PostgreSQL database
+  postgres:
+    image: postgres:15-alpine
+    container_name: blue-rose-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=blue_rose
+      - POSTGRES_USER=botuser
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - bot-network
+
+  # Redis cache
+  redis:
+    image: redis:7-alpine
+    container_name: blue-rose-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - bot-network
+
+  # Nginx reverse proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: blue-rose-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - blue-rose-bot
+    networks:
+      - bot-network
+
+  # Admin dashboard (optional)
+  dashboard:
+    image: node:18-alpine
+    container_name: blue-rose-dashboard
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./dashboard:/app
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://blue-rose-bot:8080
+    command: sh -c "npm install && npm start"
+    ports:
+      - "3000:3000"
+    networks:
+      - bot-network
+
+volumes:
+  bot_data:
+  bot_logs:
+  bot_backups:
+  postgres_data:
+  redis_data:
+
+networks:
+  bot-network:
+    driver: bridge

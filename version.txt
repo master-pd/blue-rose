@@ -1,0 +1,4 @@
+Blue Rose Bot v1.0.0
+Telegram Bot API v20+
+Python 3.12+
+Developed by RANA (MASTER)
