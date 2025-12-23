@@ -9,6 +9,7 @@
 ![Status](https://img.shields.io/badge/status-production%20ready-brightgreen)
 
 </div>
+
 ---
 ## 📋 TABLE OF CONTENTS
 1. [✨ Features](#-features)
@@ -43,12 +44,16 @@
 - Memory decay system (24-hour retention)
 
 ### 💳 PAYMENT SYSTEM
+---
+
 | Plan | Duration | Price | Features |
 |------|----------|-------|----------|
 | 🆓 Free Trial | 30 days | 0৳ | All features |
 | 🟢 Basic | 30 days | 60৳ | Full access |
 | 🔵 Standard | 90 days | 100৳ | Priority support |
 | 🟣 Premium | 8 months | 200৳ | VIP features |
+
+---
 
 **Workflow:** Request → Manual Approval → Activation → Expiry Tracking
 
