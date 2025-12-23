@@ -15,7 +15,7 @@ from config import Config
 
 logger = logging.getLogger(__name__)
 
-class DataIntegrity:
+class DataIntegrityChecker:
     """Data Integrity Manager"""
     
     def __init__(self):
