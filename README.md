@@ -29,6 +29,30 @@
 ---
 ## ✨ FEATURES
 
+### 🤖 **Core Platform**
+```mermaid
+graph TB
+    subgraph "Platform Architecture"
+        A[Telegram API] --> B[Kernel System]
+        B --> C[Module Manager]
+        C --> D[Intelligence Engine]
+        C --> E[Payment System]
+        C --> F[Moderation Suite]
+        C --> G[Analytics Dashboard]
+    end
+    
+    subgraph "Data Layer"
+        H[JSON Storage] --> I[25k+ Files]
+        H --> J[Atomic Writes]
+        H --> K[Version Control]
+    end
+    subgraph "Operations"
+        L[Hot Reload] --> M[Live Updates]
+        N[Multi-Threaded] --> O[Async Operations]
+        P[Cross-Platform] --> Q[Termux/VPS/Windows/Linux]
+    end
+```
+
 ### 🤖 CORE PLATFORM
 - ✅ Unlimited groups/supergroups/channels support
 - ✅ 1000+ modular architecture with hot-reload
