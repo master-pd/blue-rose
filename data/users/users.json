@@ -1,0 +1,33 @@
+{
+  "metadata": {
+    "description": "User data storage for Blue Rose Bot",
+    "version": "1.0.0",
+    "created": "2025-12-23T00:00:00",
+    "updated": "2025-12-23T00:00:00",
+    "schema_version": "1.0",
+    "total_users": 0,
+    "active_users": 0,
+    "inactive_users": 0,
+    "banned_users": 0
+  },
+  "users": {},
+  "statistics": {
+    "daily_active_users": {},
+    "monthly_active_users": {},
+    "user_join_trends": {},
+    "user_activity_trends": {}
+  },
+  "indexes": {
+    "by_username": {},
+    "by_join_date": {},
+    "by_last_seen": {},
+    "by_group_count": {}
+  },
+  "settings": {
+    "data_retention_days": 365,
+    "prune_inactive_after_days": 90,
+    "max_users_stored": 100000,
+    "backup_frequency_hours": 24,
+    "anonymize_after_days": 180
+  }
+}
