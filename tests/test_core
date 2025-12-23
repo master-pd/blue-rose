@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Blue Rose Bot - Core Tests
+Tests for core modules
+"""
+
+import unittest
+import asyncio
+from unittest.mock import Mock, patch, AsyncMock
+import tempfile
+from pathlib import Path
+
+from core.kernel import Kernel
+from core.permission_engine import PermissionEngine, Permission, Role
+from core.feature_switch import FeatureSwitch
+from storage.json_engine import JSONEngine
+
+class TestKernel(unittest.TestCase):
+    """Test Kernel system"""
+    
+    def setUp(self):
+        self.kernel = Kernel()
+    
+    def test_kernel_initialization(self):
+        """Test kernel initialization"""
+        self.assertIsNotNone(self.kernel)
+        self.assertIsInstance(self.kernel.modules, dict)
+    
+    @patch('core.kernel.JSONEngine')
+    async def test_kernel_start(self, mock_json):
+        """Test kernel start"""
+        mock_json.load_json.return_value = {}
+        
+        result = await self.kernel.initialize()
+        self.assertTrue(result)
+        
+        result = await self.kernel.start()
+        self.assertTrue(result)
+    
+    def test_module_registration(self):
+        """Test module registration"""
+        test_module = Mock()
+        self.kernel.register_module('test', 'module1', test_module)
+        
+        self.assertIn('test', self.kernel.modules)
+        self.assertIn('module1', self.kernel.modules['test'])
+        self.assertEqual(self.kernel.modules['test']['module1'], test_module)
+
+class TestPermissionEngine(unittest.TestCase):
+    """Test Permission Engine"""
+    
+    def setUp(self):
+        self.engine = PermissionEngine()
+    
+    async def test_role_hierarchy(self):
+        """Test role hierarchy"""
+        # Bot owner should have highest role
+        role = await self.engine.get_user_role(123456789)  # Default owner ID
+        self.assertEqual(role, Role.BOT_OWNER)
+    
+    async def test_permission_check(self):
+        """Test permission checking"""
+        # Bot owner should have all permissions
+        has_perm = await self.engine.has_permission(
+            123456789,  # Default owner ID
+            Permission.MANAGE_BOT_ADMINS
+        )
+        self.assertTrue(has_perm)
+    
+    async def test_action_permission(self):
+        """Test action permission checking"""
+        can_do = await self.engine.can_perform_action(
+            123456789,  # Default owner ID
+            'add_bot_admin'
+        )
+        self.assertTrue(can_do)
+
+class TestFeatureSwitch(unittest.TestCase):
+    """Test Feature Switch"""
+    
+    def setUp(self):
+        self.feature_switch = FeatureSwitch()
+    
+    async def test_feature_enable_disable(self):
+        """Test feature enable/disable"""
+        # Test enabling a feature
+        result = await self.feature_switch.enable_feature(
+            'auto_reply',
+            enabled_by=123456789
+        )
+        self.assertTrue(result)
+        
+        # Check if enabled
+        is_enabled = await self.feature_switch.is_enabled('auto_reply')
+        self.assertTrue(is_enabled)
+        
+        # Test disabling
+        result = await self.feature_switch.disable_feature(
+            'auto_reply',
+            disabled_by=123456789
+        )
+        self.assertTrue(result)
+        
+        # Check if disabled
+        is_enabled = await self.feature_switch.is_enabled('auto_reply')
+        self.assertFalse(is_enabled)
+
+class TestJSONEngine(unittest.TestCase):
+    """Test JSON Engine"""
+    
+    def setUp(self):
+        # Create temporary directory for tests
+        self.temp_dir = tempfile.mkdtemp()
+        self.test_file = Path(self.temp_dir) / 'test.json'
+    
+    def tearDown(self):
+        # Cleanup
+        import shutil
+        shutil.rmtree(self.temp_dir)
+    
+    def test_save_and_load(self):
+        """Test save and load JSON"""
+        test_data = {'key': 'value', 'number': 123}
+        
+        # Save
+        result = JSONEngine.save_json(self.test_file, test_data)
+        self.assertTrue(result)
+        self.assertTrue(self.test_file.exists())
+        
+        # Load
+        loaded_data = JSONEngine.load_json(self.test_file)
+        self.assertEqual(loaded_data, test_data)
+    
+    def test_update_json(self):
+        """Test JSON update"""
+        initial_data = {'key1': 'value1'}
+        JSONEngine.save_json(self.test_file, initial_data)
+        
+        # Update
+        update_data = {'key2': 'value2'}
+        result = JSONEngine.update_json(self.test_file, update_data)
+        self.assertTrue(result)
+        
+        # Check updated data
+        updated_data = JSONEngine.load_json(self.test_file)
+        self.assertEqual(updated_data, {'key1': 'value1', 'key2': 'value2'})
+
+if __name__ == '__main__':
+    unittest.main()
