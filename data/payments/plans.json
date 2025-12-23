@@ -1,1 +1,34 @@
-
+{
+  "free": {
+    "name": "Free Trial",
+    "price": 0,
+    "duration_days": 30,
+    "features": ["basic_auto_reply", "welcome_message"],
+    "max_groups": 1,
+    "priority": 0
+  },
+  "basic": {
+    "name": "30 Days",
+    "price": 60,
+    "duration_days": 30,
+    "features": ["all_auto_reply", "moderation", "scheduling"],
+    "max_groups": 3,
+    "priority": 1
+  },
+  "standard": {
+    "name": "90 Days",
+    "price": 100,
+    "duration_days": 90,
+    "features": ["all_features", "priority_support"],
+    "max_groups": 10,
+    "priority": 2
+  },
+  "premium": {
+    "name": "8 Months",
+    "price": 200,
+    "duration_days": 240,
+    "features": ["all_features", "highest_priority", "customization"],
+    "max_groups": 50,
+    "priority": 3
+  }
+}
