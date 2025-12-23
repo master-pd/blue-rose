@@ -13,6 +13,7 @@
 <p align="center">
   <img src="assets/images/banner.png" width="500"/>
 </p>
+
 ---
 ## 📋 TABLE OF CONTENTS
 1. [✨ Features](#-features)
