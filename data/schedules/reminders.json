@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "description": "Reminder schedules",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "system_reminders": {
+    "backup_reminder": {
+      "interval_hours": 24,
+      "message": "💾 ডেটা ব্যাকআপের সময় হয়েছে।",
+      "enabled": true
+    },
+    "cleanup_reminder": {
+      "interval_hours": 168,
+      "message": "🧹 সিস্টেম ক্লিনআপের সময় হয়েছে।",
+      "enabled": true
+    }
+  },
+  "user_reminders": {},
+  "group_reminders": {}
+}

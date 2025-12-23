@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "description": "Quiet/night mode hours",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "default_schedule": {
+    "enabled": false,
+    "start_time": "23:00",
+    "end_time": "06:00",
+    "timezone": "Asia/Dhaka",
+    "allow_emergency": true,
+    "silent_mode": true
+  },
+  "group_schedules": {}
+}
