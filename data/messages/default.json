@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "description": "Default message responses",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "greetings": {
+    "hello": ["হ্যালো!", "আসসালামু আলাইকুম", "Hi!", "Hello!"],
+    "how_are_you": ["আমি ভালো আছি, আপনারা কেমন আছেন?", "I'm fine, how about you?"]
+  },
+  "errors": {
+    "command_not_found": "❌ এই কমান্ডটি পাওয়া যায়নি।",
+    "permission_denied": "⛔ আপনার এই কাজ করার অনুমতি নেই।",
+    "group_only": "⚠️ এই কমান্ড শুধুমাত্র গ্রুপে ব্যবহার করা যাবে।"
+  },
+  "notifications": {
+    "bot_added": "🤖 Thanks for adding me! Use /help to get started.",
+    "admin_required": "🔒 Admin permission required for this action."
+  }
+}

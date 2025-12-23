@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "description": "Alert and notification messages",
+    "version": "1.0.0",
+    "created": "2024-01-01T00:00:00",
+    "updated": "2024-01-01T00:00:00"
+  },
+  "alerts": {
+    "plan_expiring": {
+      "title": "⚠️ Plan Expiry Alert",
+      "message": "Your plan expires in {days} days. Renew to continue services."
+    },
+    "plan_expired": {
+      "title": "⛔ Plan Expired",
+      "message": "Your plan has expired. Services disabled."
+    },
+    "payment_received": {
+      "title": "✅ Payment Received",
+      "message": "Payment confirmed! Services activated for {days} days."
+    },
+    "admin_action": {
+      "title": "👤 Admin Action",
+      "message": "Admin {admin_name} {action}."
+    },
+    "system_alert": {
+      "title": "🚨 System Alert",
+      "message": "System issue detected: {issue}"
+    }
+  }
+}
