@@ -8,12 +8,12 @@ __author__ = "RANA (MASTER)"
 
 from .group_activity import GroupActivityAnalytics
 from .admin_actions import AdminActionsAnalytics
-from .payment_stats import PaymentStatistics
+from .payment_stats import PaymentStatsAnalytics
 from .system_health import SystemHealthMonitor
 
 __all__ = [
     'GroupActivityAnalytics',
     'AdminActionsAnalytics',
-    'PaymentStatistics',
+    'PaymentStatsAnalytics',
     'SystemHealthMonitor',
 ]
