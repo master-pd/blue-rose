@@ -40,14 +40,17 @@ graph TB
         C --> F[Moderation Suite]
         C --> G[Analytics Dashboard]
     end
+```
 
+```mermaid
 graph TB
     subgraph "Data Layer"
         H[JSON Storage] --> I[25k+ Files]
         H --> J[Atomic Writes]
         H --> K[Version Control]
     end
-
+```
+```mermaid
 graph TB
     subgraph "Operations"
         L[Hot Reload] --> M[Live Updates]
