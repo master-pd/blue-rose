@@ -43,8 +43,8 @@
 - Question-type detection & pattern matching
 - Memory decay system (24-hour retention)
 
-### 💳 PAYMENT SYSTEM
 ---
+### 💳 PAYMENT SYSTEM
 
 | Plan | Duration | Price | Features |
 |------|----------|-------|----------|
